@@ -6,7 +6,7 @@ import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 function CodeWrite({ children }) {
 	const [copy, setCopy] = useState(false);
 	return (
-		<div className="bg-white grid place-items-center h-screen">
+		<div>
 			<div className="max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
 				{copy ? (
 					<div className="flex justify-between px-4 text-white text-xs items-center p-2">
