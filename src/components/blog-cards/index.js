@@ -5,7 +5,7 @@ import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import { sınırlandırılmışMetniAl } from "@/components/utils/sınırlandırılmışMetniAl";
 
 function Blogs() {
-    const metin = "How to center a divHow to center a divHow to center a divHow to center a divHow to center a divHow to center a divHow to center a divHow to center a div";
+    const metin = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.";
     const sınırlandırılmışMetin = sınırlandırılmışMetniAl(metin, 80);
     return (
         <div className="flex flex-col col-span-1 shadow-xl rounded-xl">
@@ -20,7 +20,7 @@ function Blogs() {
                 <h4 className="text-sm font">{sınırlandırılmışMetin}</h4>
                 <div className="flex justify-between">
                     <div></div>
-                    <button className="flex p-2 gap-2 font-semibold bg-blue-400 text-white w-40 items-center rounded-3xl shadow-lg justify-center">
+                    <button className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
                         Read More <AiOutlineArrowRight size={20} />
                     </button>
                 </div>

@@ -29,10 +29,10 @@ function Home() {
 		<div>
 			<Header />
 			<LatestBlog />
-			<div className="p-20 grid gap-20">
+			<div className="p-20 grid gap-20 bg-gray-200">
 				<Categories />
 				<motion.div variants={container} initial="hidden" animate="visible">
-					<motion.div variants={item} className="grid grid-cols-4 gap-5">
+					<motion.div variants={item} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
 						<Blogs />
 						<Blogs />
 						<Blogs />

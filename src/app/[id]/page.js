@@ -11,7 +11,7 @@ function CodeDetail({ params }) {
 	
 	function CodeWrite({ children }) {
 		return (
-			<div className="bg-black grid place-items-center h-screen">
+			<div className="bg-black  grid place-items-center h-screen">
 				<SyntaxHighlighter language="javascript" style={docco}>
 					{children}
 				</SyntaxHighlighter>

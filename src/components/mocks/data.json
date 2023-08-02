@@ -1,0 +1,22 @@
+{
+    "data" : [
+        {
+            "id":1,
+            "title":"TİTLE 1",
+            "description":"Description 1",
+            "date":"Şubat 1, 2022"
+        },
+        {
+            "id":2,
+            "title":"TİTLE 2",
+            "description":"Description 2",
+            "date":"Şubat 2, 2022"
+        },
+        {
+            "id":3,
+            "title":"TİTLE 3",
+            "description":"Description 3",
+            "date":"Şubat 3, 2022"
+        }
+    ]
+}

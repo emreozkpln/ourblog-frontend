@@ -1,8 +1,8 @@
-import Header from "@/components/latestBlog";
-import "./globals.css";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import { Quicksand } from "next/font/google";
+
+const inter = Quicksand({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "Create Next App",
