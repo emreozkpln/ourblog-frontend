@@ -5,7 +5,6 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
 import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import Link from "next/link";
-import { motion } from "framer-motion"
 
 function LatestBlog() {
 	return (
@@ -27,7 +26,7 @@ function LatestBlog() {
 					</div>
 				</div>
 			</div>
-			<motion.div initial={{ opacity: 0, translateX: -60 }} animate={{ opacity: 1, translateX: 0 }} className="flex flex-col gap-7 lg:gap-6 lg:flex-row justify-evenly text-white">
+			<div className="flex flex-col gap-7 lg:gap-6 lg:flex-row justify-evenly text-white">
 				<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 				<div className="w-[800px] flex flex-col gap-3 justify-center">
 					<div className="flex  items-center gap-1">
@@ -39,7 +38,7 @@ function LatestBlog() {
 						Read Artical <AiOutlineArrowRight size={20} />
 					</Link>
 				</div>
-			</motion.div>
+			</div>
 		</div>
 	);
 }
