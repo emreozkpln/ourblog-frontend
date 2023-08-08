@@ -8,10 +8,14 @@ export async function getPost() {
     const res = await fetch('http://localhost:8080/post/getPostsForMainPage', { cache: "no-store" })
     return res.json()
 }
+export async function getPostEn() {
+    const res = await fetch('http://localhost:8080/post/getPostsForMainPage?lang=EN', { cache: "no-store" })
+    return res.json()
+}
 
 export async function getTurkishPostBySlug(TrSlug) {
     const res = await fetch(`http://localhost:8080/post/${TrSlug}`, { cache: "no-store" })
-    if (res.status === 200){
+    if (res.status === 200) {
         return res.json()
     } else {
         return "err"
@@ -20,7 +24,16 @@ export async function getTurkishPostBySlug(TrSlug) {
 
 export async function getEnglishPostBySlug(TrSlug) {
     const res = await fetch(`http://localhost:8080/post/${TrSlug}?lang=EN`, { cache: "no-store" })
-    if (res.status === 200){
+    if (res.status === 200) {
+        return res.json()
+    } else {
+        return "err"
+    }
+}
+
+export async function getLastThreePost() {
+    const res = await fetch('http://localhost:8080/post/getLastThreePost', { cache: "no-store" })
+    if (res.status === 200) {
         return res.json()
     } else {
         return "err"
