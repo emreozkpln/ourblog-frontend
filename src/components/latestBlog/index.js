@@ -6,7 +6,8 @@ import Image from "next/image";
 import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import Link from "next/link";
 
-function LatestBlog() {
+function LatestBlog({ lastThree }) {
+	console.log(lastThree);
 	return (
 		<div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-20 py-8 w-full grid gap-7">
 			<div>

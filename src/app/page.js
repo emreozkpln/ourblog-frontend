@@ -6,11 +6,13 @@ import Blogs from "@/components/blogs";
 import { getPost, getLastThreePost } from "@/services/service";
 
 export default async function Home() {
-	const posts = await getPost()
+
+	const [posts, lastThree] = await Promise.all([getPost(), getLastThreePost()]);
+
 	return (
 		<div>
 			<Header />
-			<LatestBlog />
+			<LatestBlog lastThree={lastThree} />
 			<div className="p-20  bg-gray-200">
 				<div className="flex flex-col gap-20">
 					<Blogs posts={posts} lang="tr" />
