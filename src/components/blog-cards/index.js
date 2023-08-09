@@ -30,7 +30,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                     <h4 className="text-sm font">{item.EN_MetaDescription}</h4>
                                     <div className="flex justify-between">
                                         <div></div>
-                                        <Link href={`/${lang}/post/${item.EN_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
+                                        <Link href={`/${lang}/blug/${item.EN_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
                                             Read More <AiOutlineArrowRight size={20} />
                                         </Link>
                                     </div>
@@ -63,7 +63,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                     <h4 className="text-sm font">{item.TR_MetaDescription}</h4>
                                     <div className="flex justify-between">
                                         <div></div>
-                                        <Link href={`/${lang}/post/${item.TR_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
+                                        <Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
                                             Read More <AiOutlineArrowRight size={20} />
                                         </Link>
                                     </div>

@@ -1,4 +1,4 @@
-"use client"
+
 import React from "react";
 import Image from "next/image";
 import emre from "@/components/iamge/1668452923547.jpeg";

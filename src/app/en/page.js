@@ -9,7 +9,7 @@ export default async function Home() {
     return (
         <div>
             <Header />
-            <LatestBlog lastThree={lastThree} />
+            <LatestBlog lastThree={lastThree} lang="en" />
             <div className="p-20  bg-gray-200">
                 <div className="flex flex-col gap-20">
                     <Blogs posts={posts} lang="en" />
