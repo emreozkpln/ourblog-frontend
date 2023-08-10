@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { AiOutlineArrowRight } from "react-icons/ai"
 import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import Link from 'next/link';
+import formatDate from '../utils/formatDate';
 
 function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
 
@@ -26,11 +27,11 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                 </div>
                                 <div className="p-5 grid gap-2">
                                     <div className="font-semibold">{item.EN_title}</div>
-                                    <div className="text-sm ml-1 flex justify-end">{item.createdAt}</div>
+                                    <div className="text-sm ml-1 flex justify-end">{formatDate(item.createdAt)}</div>
                                     <h4 className="text-sm font">{item.EN_MetaDescription}</h4>
                                     <div className="flex justify-between">
                                         <div></div>
-                                        <Link href={`/${lang}/blug/${item.EN_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
+                                        <Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
                                             Read More <AiOutlineArrowRight size={20} />
                                         </Link>
                                     </div>
@@ -59,7 +60,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                 </div>
                                 <div className="p-5 grid gap-2">
                                     <div className="font-semibold">{item.TR_title}</div>
-                                    <div className="text-sm ml-1 flex justify-end">{item.createdAt}</div>
+                                    <div className="text-sm ml-1 flex justify-end">{formatDate(item.createdAt)}</div>
                                     <h4 className="text-sm font">{item.TR_MetaDescription}</h4>
                                     <div className="flex justify-between">
                                         <div></div>

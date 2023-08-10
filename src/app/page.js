@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/header";
 import LatestBlog from "@/components/latestBlog";
@@ -8,7 +7,7 @@ import { getPost, getLastThreePost } from "@/services/service";
 export default async function Home() {
 
 	const [posts, lastThree] = await Promise.all([getPost(), getLastThreePost()]);
-
+	
 	return (
 		<div>
 			<Header />
