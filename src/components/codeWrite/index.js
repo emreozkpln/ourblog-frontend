@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-function CodeWrite({ children }) {
+function CodeWrite({ children, className }) {
 	const [copy, setCopy] = useState(false);
 	return (
-		<div>
-			<div className="max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
+		<div className={className}>
+			<div className="min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
 				{copy ? (
 					<div className="flex justify-between px-4 text-white text-xs items-center p-2">
 						<p className="text-sm">Example code</p>

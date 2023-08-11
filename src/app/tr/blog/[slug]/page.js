@@ -16,17 +16,20 @@ async function CodeDetail({params}) {
 		return (
 			<div className="flex flex-col items-center">
 				<Header />
-				<ReactMarkdown className="text-blue-400" children={post.TR_content} components={{
+				<ReactMarkdown className="text-blue-400 md:max-w-4xl flex flex-col gap-8" children={post.TR_content} components={{
 					code({ node, inline, className, children, ...props }) {
 						const match = /language-(\w+)/.exec(className || "");
 						return !inline && match ? (
-							<CodeWrite language={match[1]} children={String(children)} />
+							<div className="justify-center items-center">
+								<CodeWrite className={"px-28"} language={match[1]} children={String(children)} />
+							</div>
 						) : (
 							<code className={className} {...props}>
 								{children}
 							</code>
 						);
 					}
+					
 				}}/>
 			</div>
 		)

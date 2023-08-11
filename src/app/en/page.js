@@ -8,7 +8,7 @@ export default async function Home() {
     const [posts, lastThree] = await Promise.all([getPostEn(), getLastThreePostEn()]);
     return (
         <div>
-            <Header />
+            <Header lang="en"/>
             <LatestBlog lastThree={lastThree} lang="en" />
             <div className="p-20  bg-gray-200">
                 <div className="flex flex-col gap-20">
