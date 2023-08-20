@@ -4,17 +4,35 @@ import Header from "@/components/header";
 import RelationalBlog from "@/components/relationalBlog";
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { getEnglishPostBySlug } from "@/services/service";
 import formatDate from "@/components/utils/formatDate";
 import {BiSolidTimeFive} from "react-icons/bi"
 import {MdDiscount} from "react-icons/md"
 import {IoMdCreate} from "react-icons/io"
 import {AiFillEye} from "react-icons/ai"
+import { cacheForEnBlog } from "@/services/customCacheService";
+
+export async function generateMetadata({ params, searchParams }, parent) {
+	const res = await cacheForEnBlog(params.slug)
+	if (res?.blog) {
+		return {
+			title: res.blog.EN_MetaTitle,
+			description: res.blog.EN_MetaDescription,
+			robots: "index, follow",
+			image: res.blog.coverImage,
+			type: "article",
+			openGraph: {
+				title: res.blog.EN_MetaTitle,
+				description: res.blog.EN_MetaDescription,
+				images: res.blog.coverImage
+			}
+		}
+	}
+}
 
 async function CodeDetail({params}) {
 	let post = null
 	
-	let res = await getEnglishPostBySlug(params.slug)
+	let res = await cacheForEnBlog(params.slug)
 	if (res.blog) {
 		post = res.blog
 	}
