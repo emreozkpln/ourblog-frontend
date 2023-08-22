@@ -8,9 +8,9 @@ export default async function Home() {
     const [posts, lastThree] = await Promise.all([getPostEn(), getLastThreePostEn()]);
     return (
         <div>
-            <Header lang="en"/>
+            <Header lang="en" />
             <LatestBlog lastThree={lastThree} lang="en" />
-            <div className="p-20  bg-gray-200">
+            <div className="p-10 sm:p-20 bg-gray-200">
                 <div className="flex flex-col gap-20">
                     <Blogs posts={posts} lang="en" />
                 </div>

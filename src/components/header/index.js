@@ -4,7 +4,7 @@ import Link from "next/link";
 function Header({ lang }) {
   if (lang == "tr") {
     return (
-      <div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-20 py-8 w-full grid gap-10">
+      <div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-5 md:px-20 py-8 w-full grid gap-10">
         <div className="items-center justify-between flex">
           <Link href="/" className="text-3xl text-white">
             LOGO
@@ -29,10 +29,10 @@ function Header({ lang }) {
       </div>
     );
   } else {
-    return ( 
-      <div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-20 py-8 w-full grid gap-10">
+    return (
+      <div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-5 md:px-20 py-8 w-full grid gap-10">
         <div className="items-center justify-between flex">
-          <Link href="/" className="text-3xl text-white">
+          <Link href="/en" className="text-3xl text-white">
             LOGO
           </Link>
           <div className="flex gap-5">

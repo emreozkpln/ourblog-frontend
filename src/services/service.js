@@ -50,3 +50,21 @@ export async function getLastThreePostEn() {
     }
 }
 
+export async function getCategoryBlogTr(slug) {
+    const res = await fetch(`http://localhost:8080/category/${slug}/posts?lang=TR`, { cache: "no-store" })
+    if (res.status === 200) {
+        return res.json()
+    } else {
+        return "err"
+    }
+}
+
+export async function getCategoryBlogEn(slug) {
+    const res = await fetch(`http://localhost:8080/category/${slug}/posts?lang=EN`, { cache: "no-store" })
+    if (res.status === 200) {
+        return res.json()
+    } else {
+        return "err"
+    }
+}
+
