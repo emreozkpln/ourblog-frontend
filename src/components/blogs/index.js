@@ -1,8 +1,6 @@
-
 import BlogCards from "../blog-cards";
 
 export default function Blogs(params) {
-    console.log(params.posts);
     let keys = Object.keys(params.posts.posts)
     for (let i = 0; i < Object.keys(params.posts.posts).length; i++) {
         return (

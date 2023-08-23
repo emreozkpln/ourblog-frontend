@@ -68,3 +68,21 @@ export async function getCategoryBlogEn(slug) {
     }
 }
 
+export async function searchPostTr(slug) {
+    const res = await fetch(`http://localhost:8080/post/searchPost?lang=TR&searchTerm=${slug}`, { cache: "no-store" })
+    if (res.status === 200) {
+        return res.json()
+    } else {
+        return "err"
+    }
+}
+
+export async function searchPostEn(slug) {
+    const res = await fetch(`http://localhost:8080/post/searchPost?lang=EN&searchTerm=${slug}`, { cache: "no-store" })
+    if (res.status === 200) {
+        return res.json()
+    } else {
+        return "err"
+    }
+}
+
