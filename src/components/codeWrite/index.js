@@ -7,7 +7,7 @@ function CodeWrite({ children, className }) {
 	const [copy, setCopy] = useState(false);
 	return (
 		<div className={className}>
-			<div className="min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
+			<div className="bg-[#3a404d] rounded-md overflow-hidden">
 				{copy ? (
 					<div className="flex justify-between px-4 text-white text-xs items-center p-2">
 						<p className="text-sm">Example code</p>
@@ -33,7 +33,7 @@ function CodeWrite({ children, className }) {
 				<SyntaxHighlighter
 					style={atomOneDark}
 					customStyle={{
-						padding: "25px",
+						padding: "20px",
 					}}
 				>
 					{children}
