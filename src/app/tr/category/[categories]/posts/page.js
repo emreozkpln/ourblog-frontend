@@ -12,7 +12,7 @@ async function CategoryBlogTr({ params }) {
     const posts = await getCategoryBlogTr(params.categories)
     return (
         <div>
-            <Header />
+            <Header lang={"tr"}/>
             <div className='p-20 grid gap-20'>
                 <div className="flex gap-4 items-center">
                     <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>

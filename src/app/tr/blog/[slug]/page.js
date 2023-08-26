@@ -41,7 +41,7 @@ async function CodeDetail({params}) {
 		return (
 			<>
 			<div className="">
-				<Header />
+				<Header lang={"tr"}/>
 				<div className="grid grid-cols-10">
 					<div className="col-start-2 col-end-10 md:col-start-3 md:col-end-9 lg:col-start-4 lg:col-end-8 w-full mt-8 mb-8">
 						<div className="flex flex-col">

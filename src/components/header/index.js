@@ -48,7 +48,7 @@ function Header({ lang }) {
               href="/contact"
               className="bg-color3 border border-gray-100 text-white p-4 rounded-lg font-semibold"
             >
-              Member Area
+              Contact Us
             </Link>
           </div>
         </div>
