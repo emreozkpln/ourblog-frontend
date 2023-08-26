@@ -57,26 +57,26 @@ async function CodeDetail({params}) {
 								<div>
 									<h1 className="text-2xl font-medium">{post.EN_title}</h1>
 									<h1 className="text-lg font-light text-gray-700">{post.EN_description}</h1>
-									<div className="flex flex-row gap-2">
+									<div className="flex flex-row space-x-2">
 										{post.categories.length !== 0 &&
 											post.categories.map((element, index) => (
-												<div key={index} className="text-lg font-light text-gray-700 flex flex-row items-center gap-1 border bg-color3/75 px-1 rounded-md"><MdDiscount size={14}/> {element.EN_title}</div>
+												<div key={index} className="text-lg font-light text-gray-700 flex flex-row items-center space-x-1 border bg-color3/75 px-1 rounded-md"><MdDiscount size={14}/><div>{element.EN_title}</div></div>
 											))
 										}
 									</div>
 								</div>
 								<div className="flex flex-col items-end">
-									<div className="flex flex-row gap-2 items-center">{post.viewCounter} <AiFillEye /></div>
+									<div className="flex flex-row items-center space-x-1"><div>{post.viewCounter}</div><AiFillEye /></div>
 									{post.createdAt !== post.updatedAt && 
-										<div className="flex flex-row gap-2 items-center">{formatDate(post.updatedAt)} <IoMdCreate /></div>
+										<div className="flex flex-row space-x-1 items-center"><div>{formatDate(post.updatedAt)}</div><IoMdCreate /></div>
 									}
-									<div className="flex flex-row gap-2 items-center">{formatDate(post.createdAt)} <BiSolidTimeFive /></div>
+									<div className="flex flex-row space-x-1 items-center"><div>{formatDate(post.createdAt)}</div><BiSolidTimeFive /></div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div className="px-8 col-start-1 col-end-11 md:col-start-2 md:col-end-10 lg:col-start-3 lg:col-end-9 w-full">
-						<ReactMarkdown className="text-blue-400 flex flex-col gap-4" children={post.EN_content} components={{
+						<ReactMarkdown className="text-blue-400 flex flex-col space-y-4" children={post.EN_content} components={{
 							code({ node, inline, className, children, ...props }) {
 								const match = /language-(\w+)/.exec(className || "");
 								return !inline && match ? (

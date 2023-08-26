@@ -13,7 +13,7 @@ export default async function Home() {
 			<Header lang="tr" />
 			<LatestBlog lastThree={lastThree} lang="tr" />
 			<div className="p-10 sm:p-20 bg-gray-200">
-				<div className="flex flex-col gap-20">
+				<div className="flex flex-col space-y-20">
 					<Blogs posts={posts} lang="tr" />
 				</div>
 			</div>

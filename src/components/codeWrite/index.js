@@ -11,19 +11,21 @@ function CodeWrite({ children, className }) {
 				{copy ? (
 					<div className="flex justify-between px-4 text-white text-xs items-center p-2">
 						<p className="text-sm">Example code</p>
-						<button className="py-1 inline-flex items-center gap-1">Copied!</button>
+						<button className="py-1 inline-flex items-center space-x-1">Copied!</button>
 					</div>
 				) : (
 					<div className="flex justify-between px-4 text-white text-xs items-center p-2">
 						<p className="text-sm">Example code</p>
 						<button
-							className="py-1 inline-flex items-center gap-1"
+							className="py-1 inline-flex items-center space-x-1"
 							onClick={() => {
-								navigator.clipboard.writeText(children);
-								setCopy(true);
-								setTimeout(() => {
-									setCopy(false);
-								}, 3000);
+								try {
+									navigator.clipboard.writeText(children);
+									setCopy(true);
+									setTimeout(() => {
+										setCopy(false);
+									}, 3000);
+								} catch (err) {}
 							}}
 						>
 							Copy code
@@ -33,7 +35,7 @@ function CodeWrite({ children, className }) {
 				<SyntaxHighlighter
 					style={atomOneDark}
 					customStyle={{
-						padding: "20px",
+						padding: "15px",
 					}}
 				>
 					{children}

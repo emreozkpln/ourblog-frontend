@@ -54,7 +54,7 @@ function LatestBlog({ lastThree, lang }) {
 		return (
 			<div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-10 md:px-20 py-8 w-full grid gap-7">
 				<div>
-					<div className="flex flex-col gap-5 sm:flex-row text-white items-start justify-between">
+					<div className="flex flex-col space-x-5 sm:flex-row text-white items-start justify-between">
 						<div className="flex text-white items-center">
 							<div className="w-1 h-16 bg-white mr-4 rounded-lg"></div>
 							<h2 className="text-2xl font-semibold text-white">Son Yazılar</h2>
@@ -68,7 +68,7 @@ function LatestBlog({ lastThree, lang }) {
 								{
 									showSuggestions && searchResults.DBresult && Array.isArray(searchResults.DBresult) && searchResults.DBresult.map((item, index) => (
 										<div key={index} className="bg-white hover:bg-gray-200 hover:text-black text-gray-600">
-											<Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex gap-2">
+											<Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex space-x-2">
 												<Image src={js} className="w-10 h-auto" />
 												<div className="flex flex-col text-sm">
 													<div className="font-medium">{item.TR_title}:</div>
@@ -97,12 +97,12 @@ function LatestBlog({ lastThree, lang }) {
 						lastThree && lastThree.posts.map((item, index) => (
 							<div key={index}>
 								<SwiperSlide>
-									<div className="flex gap-7 justify-evenly text-white ">
+									<div className="flex space-x-7 justify-evenly text-white ">
 										<div>
 											<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 										</div>
-										<div className="w-[250px] sm:w-[350px] md:w-[600px] lg:w-[800px] flex flex-col gap-3 justify-center">
-											<div className="flex items-center mt-4 gap-1">
+										<div className="w-[250px] sm:w-[350px] md:w-[600px] lg:w-[800px] flex flex-col justify-center">
+											<div className="flex items-center mt-4 space-x-1">
 												{item.categories.length === 0 ?
 													(<h3 className="font-semibold text-sm md:text-xl">Diğer</h3>)
 													:
@@ -113,8 +113,8 @@ function LatestBlog({ lastThree, lang }) {
 												<div className="text-sm text-gray-200 ml-1">{formatDate(item.createdAt)}</div>
 											</div>
 											<h1 className="text-xl w-[200px] sm:w-[580px] md:w-full font-semibold mt-2 md:text-3xl leading-tight lg:text-5xl">{item.TR_title}</h1>
-											<Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex p-2 md:p-3 gap-1 md:gap-2 font-semibold w-32 md:w-40 bg-white text-color2 items-center rounded-3xl shadow-xl justify-center mt-2 md:mt-5">
-												Read Artical <AiOutlineArrowRight className="w-3 h-3 md:w-5 md:h-5" />
+											<Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex p-2 md:p-3 space-x-1 md:space-x-2 font-semibold w-32 md:w-40 bg-white text-color2 items-center rounded-3xl shadow-xl justify-center mt-2 md:mt-5">
+												Yazıyı oku<AiOutlineArrowRight className="w-3 h-3 md:w-5 md:h-5 ml-2" />
 											</Link>
 										</div>
 									</div>
@@ -129,7 +129,7 @@ function LatestBlog({ lastThree, lang }) {
 		return (
 			<div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-10 md:px-20 py-8 w-full grid gap-7">
 				<div>
-					<div className="flex flex-col gap-5 sm:flex-row text-white items-start justify-between">
+					<div className="flex flex-col space-x-5 sm:flex-row text-white items-start justify-between">
 						<div className="flex text-white items-center">
 							<div className="w-1 h-16 bg-white mr-4 rounded-lg"></div>
 							<h2 className="text-2xl font-semibold text-white">Latest Blog</h2>
@@ -143,7 +143,7 @@ function LatestBlog({ lastThree, lang }) {
 								{
 									showSuggestions && searchResults.DBresult && Array.isArray(searchResults.DBresult) && searchResults.DBresult.map((item, index) => (
 										<div key={index} className="bg-white hover:bg-gray-200 hover:text-black text-gray-600">
-											<Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex gap-2">
+											<Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex space-x-2">
 												<Image src={js} className="w-10 h-auto" />
 												<div className="flex flex-col text-sm">
 													<div className="font-medium">{item.EN_title}:</div>
@@ -172,12 +172,12 @@ function LatestBlog({ lastThree, lang }) {
 						lastThree && lastThree.posts.map((item, index) => (
 							<div key={index}>
 								<SwiperSlide>
-									<div className="flex gap-7 justify-evenly text-white ">
+									<div className="flex space-x-7 justify-evenly text-white ">
 										<div>
 											<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 										</div>
-										<div className="w-[250px] sm:w-[350px] md:w-[600px] lg:w-[800px] flex flex-col gap-3 justify-center">
-											<div className="flex items-center mt-4 gap-1">
+										<div className="w-[250px] sm:w-[350px] md:w-[600px] lg:w-[800px] flex flex-col justify-center">
+											<div className="flex items-center mt-4 space-x-1">
 												{item.categories.length === 0 ?
 													(<h3 className="font-semibold text-sm md:text-xl">Diğer</h3>)
 													:
@@ -188,8 +188,8 @@ function LatestBlog({ lastThree, lang }) {
 												<div className="text-sm text-gray-200 ml-1">{formatDate(item.createdAt)}</div>
 											</div>
 											<h1 className="text-xl w-[200px] sm:w-[580px] md:w-full font-semibold mt-2 md:text-3xl leading-tight lg:text-5xl">{item.EN_title}</h1>
-											<Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex p-2 md:p-3 gap-1 md:gap-2 font-semibold w-32 md:w-40 bg-white text-color2 items-center rounded-3xl shadow-xl justify-center mt-2 md:mt-5">
-												Read Artical <AiOutlineArrowRight className="w-3 h-3 md:w-5 md:h-5" />
+											<Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex p-2 md:p-3 space-x-1 md:space-x-2 font-semibold w-32 md:w-40 bg-white text-color2 items-center rounded-3xl shadow-xl justify-center mt-2 md:mt-5">
+												Read Artical <AiOutlineArrowRight className="w-3 h-3 md:w-5 md:h-5 ml-2" />
 											</Link>
 										</div>
 									</div>

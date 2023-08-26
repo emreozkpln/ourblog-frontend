@@ -14,7 +14,7 @@ async function CategoryBlogTr({ params }) {
         <div>
             <Header lang={"tr"}/>
             <div className='p-20 grid gap-20'>
-                <div className="flex gap-4 items-center">
+                <div className="flex space-x-4 items-center">
                     <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>
                     <h2 className="text-3xl font-extrabold text-color2">
                         {params.categories.toString().toUpperCase()} <span className="bg-color3 p-1 text-white rounded-xl shadow-xl">10</span>
@@ -35,7 +35,7 @@ async function CategoryBlogTr({ params }) {
                                         <div className="flex justify-between">
                                             <div></div>
                                             <Link href={`/tr/blog/${item.TR_Slug}`} className="flex p-2 gap-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
-                                                Read More <AiOutlineArrowRight size={20} />
+                                                Read More <AiOutlineArrowRight size={20} className='ml-2'/>
                                             </Link>
                                         </div>
                                     </div>
