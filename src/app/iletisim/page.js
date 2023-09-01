@@ -8,7 +8,7 @@ function Contact() {
 
     return (
         <div className="w-full bg-gray-200 flex flex-col space-y-14">
-            <Header />
+            <Header lang={"tr"}/>
             <div className="px-20 sm:px-40 flex flex-col space-y-20 pb-20 text-white">
                 <div className="sm:w-full shadow-2xl shadow-gray-600 rounded-xl bg-gradient-to-r from-color3 via-color2 to-color1 flex flex-col space-y-9 md:space-y-0 md:grid md:grid-cols-1 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 p-6 sm:p-12">
                     <div className="flex items-center justify-center">

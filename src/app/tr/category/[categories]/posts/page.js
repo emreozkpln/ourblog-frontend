@@ -6,10 +6,27 @@ import js from "@/components/iamge/javascript-zhestkie-chasti.jpg";
 import formatDate from '@/components/utils/formatDate';
 import Link from 'next/link';
 import { AiOutlineArrowRight } from "react-icons/ai"
+import { redirect } from 'next/navigation';
 
 async function CategoryBlogTr({ params }) {
 
     const [posts, blogCounter] = await Promise.all([getCategoryBlogTr(params.categories), getBlogCounter(params.categories, "TR")]);
+    switch (posts) {
+        case "notfound":
+            redirect("/not-found")
+            break;
+        case "badrequest":
+            redirect("/bad-request")
+            break;
+        case "err": 
+            redirect("/internal-error")
+        default:
+            break;
+    }
+    if (blogCounter == "err") {
+        redirect("/internal-error")
+    }
+
     return (
         <div>
             <Header lang={"tr"} />
