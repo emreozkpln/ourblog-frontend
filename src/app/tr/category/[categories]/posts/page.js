@@ -18,7 +18,7 @@ async function CategoryBlogTr({ params }) {
         case "badrequest":
             redirect("/bad-request")
             break;
-        case "err": 
+        case "err":
             redirect("/internal-error")
         default:
             break;
@@ -30,14 +30,14 @@ async function CategoryBlogTr({ params }) {
     return (
         <div>
             <Header lang={"tr"} />
-            <div className='p-20 grid gap-20'>
+            <div className='p-10 sm:p-20 grid gap-20'>
                 <div className="flex space-x-4 items-center">
                     <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>
                     <h2 className="text-3xl font-extrabold text-color2">
                         {params.categories.toString().toUpperCase()} <span className="bg-color3 p-1 text-white rounded-xl shadow-xl">{blogCounter.BlogCounter}</span>
                     </h2>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                     {
                         posts.posts.map((item, index) => (
                             <div key={index}>

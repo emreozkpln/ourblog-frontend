@@ -25,7 +25,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                     <div className='flex justify-between items-center'>
                         <div className="flex space-x-4 items-center">
                             <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>
-                            <h2 className="text-3xl font-extrabold text-color2">
+                            <h2 className="text-xl sm:text-3xl font-extrabold text-color2">
                                 {categoryName} <span className="bg-color3 p-1 text-white rounded-xl shadow-xl">{blogCounter}</span>
                             </h2>
                         </div>
@@ -88,7 +88,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                     <div className='flex justify-between items-center'>
                         <div className="flex space-x-4 items-center">
                             <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>
-                            <h2 className="text-3xl font-extrabold text-color2">
+                            <h2 className="text-xl sm:text-3xl font-extrabold text-color2">
                                 {categoryName} <span className="bg-color3 p-1 text-white rounded-xl shadow-xl">{blogCounter}</span>
                             </h2>
                         </div>

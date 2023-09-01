@@ -106,9 +106,9 @@ export async function getCategoryBlogTr(slug, page = 1) {
                 return res.json()
             case 404:
                 return "notfound"
-            case 400: 
+            case 400:
                 return "badrequest"
-            case 500: 
+            case 500:
                 return "err"
             default:
                 return "err"
@@ -126,9 +126,9 @@ export async function getCategoryBlogEn(slug, page = 1) {
                 return res.json()
             case 404:
                 return "notfound"
-            case 400: 
+            case 400:
                 return "badrequest"
-            case 500: 
+            case 500:
                 return "err"
             default:
                 return "err"
@@ -138,22 +138,9 @@ export async function getCategoryBlogEn(slug, page = 1) {
     }
 }
 
-export async function searchPostTr(slug) {
+export async function searchPost(slug, lang) {
     try {
-        const res = await fetch(`http://localhost:8080/post/searchPost?lang=TR&searchTerm=${slug}`, { cache: "no-store" })
-        if (res.status === 200) {
-            return res.json()
-        } else {
-            return "err"
-        }
-    } catch (err) {
-        return "err"
-    }
-}
-
-export async function searchPostEn(slug) {
-    try {
-        const res = await fetch("http://localhost:8080/post/searchPost?lang=EN&searchTerm=${slug}", { cache: "no-store" })
+        const res = await fetch(`http://localhost:8080/post/searchPost?lang=${lang}&searchTerm=${slug}`, { cache: "no-store" })
         if (res.status === 200) {
             return res.json()
         } else {
