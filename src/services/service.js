@@ -86,3 +86,12 @@ export async function searchPostEn(slug) {
     }
 }
 
+export async function getBlogCounter(slug, lang) {
+    const res = await fetch(`http://localhost:8080/category/getBlogCounter?categorySlug=${slug}&lang=${lang}`, { cache: "no-store" })
+    if (res.status === 200) {
+        return res.json()
+    } else {
+        return "err"
+    }
+}
+

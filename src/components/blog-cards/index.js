@@ -93,7 +93,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                             </h2>
                         </div>
                         <div className='shadow-lg bg-color1 text-white p-3 rounded-2xl'>
-                            <Link href={`/tr/category/${titleTr}/posts`}>View All</Link>
+                            <Link href={`/tr/category/${titleTr}/posts`}>Hepsini Göster</Link>
                         </div>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-5'>
@@ -132,7 +132,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                             <div className="flex justify-between">
                                                 <div></div>
                                                 <Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
-                                                    Read More <AiOutlineArrowRight size={20} />
+                                                    Yazıyı Oku <AiOutlineArrowRight size={20} className='ml-2' />
                                                 </Link>
                                             </div>
                                         </div>

@@ -19,7 +19,7 @@ function Header({ lang }) {
               </div>
             </div>
             <Link
-              href="/contact"
+              href="/iletisim"
               className="bg-color3 border border-gray-100 text-white p-4 rounded-lg font-semibold"
             >
               Bizi tanı
@@ -45,7 +45,7 @@ function Header({ lang }) {
               <Link href="/">TR</Link>
             </div>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="bg-color3 border border-gray-100 text-white p-4 rounded-lg font-semibold"
             >
               Contact Us
