@@ -11,6 +11,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/module
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { searchPost } from "@/services/service";
+import { redirect } from "next/navigation";
 
 function LatestBlog({ lastThree, lang }) {
 	const [searchResults, setSearchResults] = useState([]);
@@ -23,9 +24,19 @@ function LatestBlog({ lastThree, lang }) {
 	const handleSearchChangeEN = async (event) => {
 		const results = await searchPost(event, "EN");
 		setSearchResults(results)
-		console.log(results);
 	};
-
+	switch (lastThree) {
+		case "notfound":
+			redirect("/not-found")
+			break;
+		case "badrequest":
+			redirect("/bad-request")
+			break;
+		case "err":
+			redirect("/internal-error")
+		default:
+			break;
+	}
 
 	if (lang == "tr") {
 		return (
@@ -48,7 +59,7 @@ function LatestBlog({ lastThree, lang }) {
 											<Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex space-x-2">
 												<Image src={js} className="w-10 h-auto" />
 												<div className="flex flex-col text-sm">
-													<div className="font-medium">{item.TR_title}:</div>
+													<div className="line-clamp-1 font-medium">{item.TR_title}:</div>
 													<div className="line-clamp-1 font-medium">{item.TR_description}</div>
 												</div>
 											</Link>
@@ -69,12 +80,12 @@ function LatestBlog({ lastThree, lang }) {
 					navigation={true}
 					pagination={{ clickable: true }}
 					scrollbar={{ draggable: true }}
-					className="w-[calc(100vw-100px)] sm:w-[calc(100vw-160px)] p-2">
+					className="w-[calc(100vw-90px)] sm:w-[calc(100vw-160px)] p-2">
 					{
 						lastThree && lastThree.posts.map((item, index) => (
 							<div key={index}>
 								<SwiperSlide>
-									<div className="flex space-x-7 justify-evenly text-white ">
+									<div className="flex space-x-9 justify-evenly text-white ">
 										<div>
 											<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 										</div>
@@ -123,7 +134,7 @@ function LatestBlog({ lastThree, lang }) {
 											<Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex space-x-2">
 												<Image src={js} className="w-10 h-auto" />
 												<div className="flex flex-col text-sm">
-													<div className="font-medium">{item.EN_title}:</div>
+													<div className="line-clamp-1 font-medium">{item.EN_title}:</div>
 													<div className="line-clamp-1 font-medium">{item.EN_description}</div>
 												</div>
 											</Link>
@@ -144,12 +155,12 @@ function LatestBlog({ lastThree, lang }) {
 					navigation={true}
 					pagination={{ clickable: true }}
 					scrollbar={{ draggable: true }}
-					className="w-[calc(100vw-100px)] sm:w-[calc(100vw-160px)] p-2">
+					className="w-[calc(100vw-90px)] sm:w-[calc(100vw-160px)] p-2">
 					{
 						lastThree && lastThree.posts.map((item, index) => (
 							<div key={index}>
 								<SwiperSlide>
-									<div className="flex space-x-7 justify-evenly text-white ">
+									<div className="flex space-x-9 justify-evenly text-white ">
 										<div>
 											<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 										</div>

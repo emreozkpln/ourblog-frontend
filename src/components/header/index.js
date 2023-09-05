@@ -9,7 +9,7 @@ function Header({ lang }) {
           <Link href="/" className="text-3xl text-white">
             LOGO
           </Link>
-          <div className="flex space-x-5">
+          <div className="flex space-x-2 sm:space-x-5">
             <div className="flex space-x-2 bg-color3 border border-gray-100 text-white p-4 rounded-lg font-light">
               <Link href="/en">EN</Link>
               <div>/</div>
@@ -35,7 +35,7 @@ function Header({ lang }) {
           <Link href="/en" className="text-3xl text-white">
             LOGO
           </Link>
-          <div className="flex space-x-5">
+          <div className="flex space-x-2 sm:space-x-5">
             <div className="flex space-x-2 bg-color3 border border-gray-100 text-white p-4 rounded-lg font-light">
               <div className="flex flex-col">
                 <Link className="font-bold" href="/en">EN</Link>
