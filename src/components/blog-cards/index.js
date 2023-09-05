@@ -79,7 +79,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                         <div>
                                             <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />
                                         </div>
-                                        <div className="p-5 flex flex-col space-y-3">
+                                        <div className="p-5 flex flex-col space-y-2">
                                             <div className="font-semibold">{item.EN_title}</div>
                                             <div className="text-sm ml-1 flex justify-end">{formatDate(item.createdAt)}</div>
                                             <h4 className="text-sm line-clamp-2">{item.EN_description}</h4>
