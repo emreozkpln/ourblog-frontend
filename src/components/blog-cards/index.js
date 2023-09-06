@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { redirect } from 'next/navigation';
 
-function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
+function BlogCards({ categoryName, postsDetails, blogCounter, lang, slug }) {
     switch (postsDetails) {
         case "notfound":
             redirect("/not-found")
@@ -48,7 +48,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                             </h2>
                         </div>
                         <div className='shadow-lg bg-color1 text-white p-3 rounded-2xl'>
-                            <Link href={`/en/category/${titleEn}/posts`}>View All</Link>
+                            <Link href={`/en/category/${slug}/posts`}>View All</Link>
                         </div>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-5'>
@@ -108,7 +108,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                             </h2>
                         </div>
                         <div className='shadow-lg bg-color1 text-white p-3 rounded-2xl'>
-                            <Link href={`/tr/category/${titleTr}/posts`}>Hepsini Gör</Link>
+                            <Link href={`/tr/category/${slug}/posts`}>Hepsini Gör</Link>
                         </div>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-5'>
