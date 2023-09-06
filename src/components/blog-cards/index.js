@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { AiOutlineArrowRight } from "react-icons/ai"
+import { BiSolidPencil } from "react-icons/bi"
 import Image from 'next/image'
 import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import Link from 'next/link';
@@ -79,16 +80,13 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                         <div>
                                             <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />
                                         </div>
-                                        <div className="p-5 flex flex-col space-y-2">
-                                            <div className="font-semibold">{item.EN_title}</div>
-                                            <div className="text-sm ml-1 flex justify-end">{formatDate(item.createdAt)}</div>
-                                            <h4 className="text-sm line-clamp-2">{item.EN_description}</h4>
-                                            <div className="flex justify-between">
-                                                <div></div>
-                                                <Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
-                                                    <div>Read More</div> <AiOutlineArrowRight className='ml-2' size={20} />
-                                                </Link>
-                                            </div>
+                                        <div className="p-5 flex flex-col min-h-[248px]">
+                                            <div className="font-semibold line-clamp-2">{item.EN_title}</div>
+                                            <div className="text-sm ml-auto mt-2 flex flex-row items-center justify-center">{formatDate(item.createdAt)} <BiSolidPencil size={14} className='ml-1'/></div>
+                                            <h4 className="text-sm mt-2 line-clamp-3">{item.EN_description}</h4>
+                                            <Link href={`/${lang}/blog/${item.EN_Slug}`} className="mt-auto ml-auto flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
+                                                <div>Read More</div> <AiOutlineArrowRight className='ml-2' size={20} />
+                                            </Link>
                                         </div>
                                     </SwiperSlide>
                                 </div>
@@ -142,16 +140,13 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang }) {
                                         <div>
                                             <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />
                                         </div>
-                                        <div className="p-5 grid space-y-2">
-                                            <div className="font-semibold">{item.TR_title}</div>
-                                            <div className="text-sm ml-1 flex justify-end">{formatDate(item.createdAt)}</div>
-                                            <h4 className="text-sm line-clamp-1">{item.TR_description}</h4>
-                                            <div className="flex justify-between">
-                                                <div></div>
-                                                <Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
-                                                    Yazıyı Oku <AiOutlineArrowRight size={20} className='ml-2' />
-                                                </Link>
-                                            </div>
+                                        <div className="p-5 flex flex-col min-h-[248px]">
+                                            <div className="font-semibold line-clamp-2">{item.TR_title}</div>
+                                            <div className="text-sm ml-auto mt-2 flex flex-row items-center justify-center">{formatDate(item.createdAt)} <BiSolidPencil size={14} className='ml-1'/></div>
+                                            <h4 className="text-sm mt-2 line-clamp-3">{item.TR_description}</h4>
+                                            <Link href={`/${lang}/blog/${item.TR_Slug}`} className="mt-auto ml-auto flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
+                                                Yazıyı Oku <AiOutlineArrowRight size={20} className='ml-2' />
+                                            </Link>
                                         </div>
                                     </SwiperSlide>
                                 </div>
