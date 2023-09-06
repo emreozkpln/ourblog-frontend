@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
@@ -14,17 +14,40 @@ import { searchPost } from "@/services/service";
 import { redirect } from "next/navigation";
 
 function LatestBlog({ lastThree, lang }) {
+	const [searchValue, setSearchValue] = useState('');
 	const [searchResults, setSearchResults] = useState([]);
+	const inputRef = useRef(null);
+	const resultsRef = useRef(null);
 
-	const handleSearchChangeTr = async (event) => {
-		const results = await searchPost(event, "TR");
-		setSearchResults(results)
-	};
+	useEffect(() => {
+		if (lang == "tr") {
+			const handleSearch = async () => {
+				const results = await searchPost(searchValue, "TR");
+				setSearchResults(results)
+			}
+			handleSearch()
+		} else {
+			const handleSearch = async () => {
+				const results = await searchPost(searchValue, "EN");
+				setSearchResults(results)
+			}
+			handleSearch()
+		}
+	}, [searchValue]);
 
-	const handleSearchChangeEN = async (event) => {
-		const results = await searchPost(event, "EN");
-		setSearchResults(results)
-	};
+	useEffect(() => {
+		const handleOutsideClick = (e) => {
+			if (inputRef.current && !inputRef.current.contains(e.target) && resultsRef.current && !resultsRef.current.contains(e.target)) {
+				setSearchResults([]);
+			}
+		};
+		document.addEventListener('click', handleOutsideClick);
+
+		return () => {
+			document.removeEventListener('click', handleOutsideClick);
+		};
+	}, []);
+
 	switch (lastThree) {
 		case "notfound":
 			redirect("/not-found")
@@ -50,9 +73,9 @@ function LatestBlog({ lastThree, lang }) {
 						<div className="border-b border-gray-300 flex flex-col relative ">
 							<div className="relative border-b border-white">
 								<BsSearch size={20} className=" absolute left-0 top-1/2 transform -translate-y-1/2 text-white" />
-								<input type="text" className="pl-9 border-none bg-transparent outline-none p-1 w-60 sm:w-80 text-white placeholder:text-gray-300" onChange={(e) => { handleSearchChangeTr(e.target.value) }} placeholder="s e a r c h" />
+								<input type="text" ref={inputRef} className="pl-9 border-none bg-transparent outline-none p-1 w-60 sm:w-80 text-white placeholder:text-gray-300" onChange={(e) => { setSearchValue(e.target.value) }} placeholder="s e a r c h" />
 							</div>
-							<div className="rounded-lg absolute top-10 z-50 p-1 w-full" >
+							<div className="rounded-lg absolute top-10 z-50 p-1 w-full" ref={resultsRef}>
 								{
 									searchResults.DBresult && Array.isArray(searchResults.DBresult) && searchResults.DBresult.map((item, index) => (
 										<div key={index} className="bg-white hover:bg-gray-200 hover:text-black text-gray-600">
@@ -125,9 +148,9 @@ function LatestBlog({ lastThree, lang }) {
 						<div className="border-b border-gray-300 flex flex-col relative">
 							<div className="relative border-b border-white">
 								<BsSearch size={20} className=" absolute left-0 top-1/2 transform -translate-y-1/2 text-white" />
-								<input type="text" className="pl-9 border-none bg-transparent outline-none p-1 w-60 sm:w-80 text-white placeholder:text-gray-300" onChange={(e) => { handleSearchChangeEN(e.target.value) }} placeholder="s e a r c h" />
+								<input type="text" ref={inputRef} className="pl-9 border-none bg-transparent outline-none p-1 w-60 sm:w-80 text-white placeholder:text-gray-300" onChange={(e) => { setSearchValue(e.target.value) }} placeholder="s e a r c h" />
 							</div>
-							<div className="rounded-lg absolute top-10 z-50 p-1 w-full" >
+							<div className="rounded-lg absolute top-10 z-50 p-1 w-full" ref={resultsRef}>
 								{
 									searchResults.DBresult && Array.isArray(searchResults.DBresult) && searchResults.DBresult.map((item, index) => (
 										<div key={index} className="bg-white hover:bg-gray-200 hover:text-black text-gray-600">
