@@ -4,9 +4,7 @@ Disallow: /admin/*
 Disallow: */admin/*
 Disallow: /admin/
 Disallow: /admin
-
 User-agent: ChatGPT-User
 Disallow: /
-
 User-agent: GPTBot
 Disallow: /

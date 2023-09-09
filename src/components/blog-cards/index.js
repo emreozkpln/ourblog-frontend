@@ -75,7 +75,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang, slug }) {
                             scrollbar={{ draggable: true }}
                             className="w-[calc(100vw-40%)]">
                             {postsDetails && postsDetails.map((item, index) => (
-                                <div key={index}>
+                                <div key={item.EN_Slug}>
                                     <SwiperSlide className="flex flex-col rounded-xl border-b border-gray-300">
                                         <div>
                                             <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />
@@ -135,7 +135,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang, slug }) {
                             scrollbar={{ draggable: true }}
                             className="w-[calc(100vw-40%)]">
                             {postsDetails && postsDetails.map((item, index) => (
-                                <div key={index} >
+                                <div key={item.TR_Slug} >
                                     <SwiperSlide className="flex flex-col col-span-1 border-b border-gray-300 rounded-xl">
                                         <div>
                                             <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />

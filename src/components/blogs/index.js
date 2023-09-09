@@ -7,7 +7,7 @@ export default function Blogs(params) {
             <>
                 {
                     keys.map((val, key) => (
-                        <BlogCards key={key} slug={params.lang == "tr" ? params.posts.posts[val].tr_slug : params.posts.posts[val].en_slug} lang={params.lang} categoryName={val} postsDetails={params.posts.posts[val].posts} blogCounter={params.posts.posts[val].blogCounter} />
+                        <BlogCards key={params.lang == "tr" ? params.posts.posts[val].tr_slug : params.posts.posts[val].en_slug} slug={params.lang == "tr" ? params.posts.posts[val].tr_slug : params.posts.posts[val].en_slug} lang={params.lang} categoryName={val} postsDetails={params.posts.posts[val].posts} blogCounter={params.posts.posts[val].blogCounter} />
                     ))
                 }
             </>
