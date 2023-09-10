@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-export default function BadRequest() {
+export async function generateMetadata(){
+    return {
+        title: "500 İnternal Error.",
+        robots: "index, follow",
+    }
+}
+
+export default function InternalServerError() {
     return (
         <div className='h-screen w-screen flex items-center justify-center flex-col space-y-4'>
             <div className='text-9xl font-semibold text-gray-700'>500</div>

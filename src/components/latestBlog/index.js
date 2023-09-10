@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
-import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import Link from "next/link";
 import formatDate from "../utils/formatDate";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -80,7 +79,7 @@ function LatestBlog({ lastThree, lang }) {
 									searchResults.DBresult && Array.isArray(searchResults.DBresult) && searchResults.DBresult.map((item, index) => (
 										<div key={index} className="bg-white hover:bg-gray-200 hover:text-black text-gray-600">
 											<Link href={`/${lang}/blog/${item.TR_Slug}`} className="flex space-x-2">
-												<Image src={js} className="w-10 h-auto" />
+												<img src={item.coverImage} alt={item.coverImageAltTR} title={item.coverImageTitleTR} className="w-10 h-auto" />
 												<div className="flex flex-col text-sm">
 													<div className="line-clamp-1 font-medium">{item.TR_title}:</div>
 													<div className="line-clamp-1 font-medium">{item.TR_description}</div>
@@ -110,7 +109,7 @@ function LatestBlog({ lastThree, lang }) {
 								<SwiperSlide>
 									<div className="flex space-x-9 justify-evenly text-white ">
 										<div>
-											<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
+											<img src={item.coverImage} title={item.coverImageTitleTR} alt={item.coverImageAltTR} className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 										</div>
 										<div className="w-[250px] sm:w-[350px] md:w-[600px] lg:w-[800px] flex flex-col justify-center">
 											<div className="flex items-center mt-4 space-x-1">
@@ -155,7 +154,7 @@ function LatestBlog({ lastThree, lang }) {
 									searchResults.DBresult && Array.isArray(searchResults.DBresult) && searchResults.DBresult.map((item, index) => (
 										<div key={index} className="bg-white hover:bg-gray-200 hover:text-black text-gray-600">
 											<Link href={`/${lang}/blog/${item.EN_Slug}`} className="flex space-x-2">
-												<Image src={js} className="w-10 h-auto" />
+												<img src={item.coverImage} title={item.coverImageTitleEN} alt={item.coverImageAltEN} className="w-10 h-auto" />
 												<div className="flex flex-col text-sm">
 													<div className="line-clamp-1 font-medium">{item.EN_title}:</div>
 													<div className="line-clamp-1 font-medium">{item.EN_description}</div>
@@ -185,7 +184,7 @@ function LatestBlog({ lastThree, lang }) {
 								<SwiperSlide>
 									<div className="flex space-x-9 justify-evenly text-white ">
 										<div>
-											<Image src={js} alt="Javascript" className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
+											<img src={item.coverImage} title={item.coverImageTitleEN} alt={item.coverImageAltEN} className="h-[370px] w-[580px] rounded-3xl shadow-xl hidden md:block" />
 										</div>
 										<div className="w-[250px] sm:w-[350px] md:w-[600px] lg:w-[800px] flex flex-col justify-center">
 											<div className="flex items-center mt-4 space-x-1">

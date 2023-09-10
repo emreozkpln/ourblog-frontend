@@ -4,6 +4,13 @@ import LatestBlog from "@/components/latestBlog";
 import Blogs from "@/components/blogs";
 import { getPost, getLastThreePost } from "@/services/service";
 
+export function generateMetadata() {
+	return {
+		title: "İleri seviye programcılığa şimdi adım at | handbookofcoding.com",
+		description: "handbookofcoding senior developer olma yolunda sana kritik bilgiler verecektir. Daha güvenli, modern, stabil, uyumlu yazılım geliştirmen için bir el kitabı olacak. Hemen senior developer ol."
+	}
+}
+
 export default async function Home() {
 
 	const [posts, lastThree] = await Promise.all([getPost(), getLastThreePost()]);
