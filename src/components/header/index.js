@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { AiOutlineHome } from "react-icons/ai"
 
 function Header({ lang }) {
   if (lang == "tr") {
@@ -7,7 +8,7 @@ function Header({ lang }) {
       <div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-5 md:px-20 py-8 w-full grid space-x-10">
         <div className="items-center justify-between flex">
           <Link href="/" className="text-3xl text-white">
-            LOGO
+            <AiOutlineHome size={35} />
           </Link>
           <div className="flex space-x-2 sm:space-x-5">
             <div className="flex space-x-2 bg-color3 border border-gray-100 text-white p-4 rounded-lg font-light">
@@ -26,14 +27,14 @@ function Header({ lang }) {
             </Link>
           </div>
         </div>
-      </div>
+      </div >
     );
   } else {
     return (
       <div className="bg-gradient-to-r from-color1 via-color2 to-color3 px-5 md:px-20 py-8 w-full grid space-x-10">
         <div className="items-center justify-between flex">
           <Link href="/en" className="text-3xl text-white">
-            LOGO
+            <AiOutlineHome size={35} />
           </Link>
           <div className="flex space-x-2 sm:space-x-5">
             <div className="flex space-x-2 bg-color3 border border-gray-100 text-white p-4 rounded-lg font-light">
