@@ -2,8 +2,6 @@
 import React from 'react'
 import { AiOutlineArrowRight } from "react-icons/ai"
 import { BiSolidPencil } from "react-icons/bi"
-import Image from 'next/image'
-import js from "../iamge/javascript-zhestkie-chasti.jpg";
 import Link from 'next/link';
 import formatDate from '../utils/formatDate';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -78,7 +76,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang, slug }) {
                                 <div key={item.EN_Slug}>
                                     <SwiperSlide className="flex flex-col rounded-xl border-b border-gray-300">
                                         <div>
-                                            <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />
+                                            <img src={item.coverImage} title={item.coverImageTitleEN} alt={item.coverImageAltEN} className="w-full h-[200px] rounded-t-xl" />
                                         </div>
                                         <div className="p-5 flex flex-col min-h-[248px]">
                                             <div className="font-semibold line-clamp-2">{item.EN_title}</div>
@@ -138,7 +136,7 @@ function BlogCards({ categoryName, postsDetails, blogCounter, lang, slug }) {
                                 <div key={item.TR_Slug} >
                                     <SwiperSlide className="flex flex-col col-span-1 border-b border-gray-300 rounded-xl">
                                         <div>
-                                            <Image src={js} alt="Javascript" className="w-full h-[200px] rounded-t-xl" />
+                                            <img src={item.coverImage} title={item.coverImageTitleTR} alt={item.coverImageAltTR} className="w-full h-[200px] rounded-t-xl" />
                                         </div>
                                         <div className="p-5 flex flex-col min-h-[248px]">
                                             <div className="font-semibold line-clamp-2">{item.TR_title}</div>

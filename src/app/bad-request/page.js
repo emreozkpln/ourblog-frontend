@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+export function generateMetadata() {
+    return {
+        title: "400 Bad Request.",
+        robots: "index, follow",
+    }
+}
+
 export default function BadRequest() {
     return (
         <div className='h-screen w-screen flex items-center justify-center flex-col space-y-4'>
