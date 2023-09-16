@@ -16,7 +16,7 @@ function CategoryBlogTr({ params }) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const blogCounterRes = await fetch(`http://localhost:8080/category/getBlogCounter?categorySlug=${params.categories}&lang=tr`)
+                const blogCounterRes = await fetch(process.env.API_URL + `/category/getBlogCounter?categorySlug=${params.categories}&lang=tr`)
                 switch (blogCounterRes.status) {
                     case 200:
                         const blogCounterJson = await blogCounterRes.json()
@@ -40,7 +40,7 @@ function CategoryBlogTr({ params }) {
                 router.push("/internal-error")
             }
             try {
-                const postsRes = await fetch(`http://localhost:8080/category/${params.categories}/posts?lang=tr`)
+                const postsRes = await fetch(process.env.API_URL + `/category/${params.categories}/posts?lang=tr`)
                 switch (postsRes.status) {
                     case 200:
                         const postsJson = await postsRes.json()
@@ -63,7 +63,7 @@ function CategoryBlogTr({ params }) {
     }, [])
     const loadMore = () => {
         setCurrentPage(currentPage + 1)
-        fetch(`http://localhost:8080/category/${params.categories}/posts?lang=tr&page=${currentPage}`).then(res => res.json()).then(data => {
+        fetch(process.env.API_URL + `/category/${params.categories}/posts?lang=tr&page=${currentPage}`).then(res => res.json()).then(data => {
             setBlogPosts([...blogPosts, ...data.posts])
             if (data.posts.length < 11) {
                 setIsLoadedAllPost(true)
@@ -71,49 +71,49 @@ function CategoryBlogTr({ params }) {
                 setIsLoadedAllPost(false)
             }
         })
-        
+
     }
 
     return (
-            <div>
-                <Header lang={"tr"} />
-                <div className='p-5 sm:p-20 grid gap-20'>
-                    <div className="flex space-x-4 items-center">
-                        <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>
-                        <h2 className="text-3xl font-extrabold text-color2">
-                            {params.categories.toString().toUpperCase()} {blogCounter && <span className="bg-color3 p-1 text-white rounded-xl shadow-xl">{blogCounter}</span>}
-                        </h2>
-                    </div>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5'>
-                        {
-                            blogPosts && blogPosts.map((item, index) => (
-                                <div key={index}>
-                                    <div className="flex flex-col col-span-1 shadow-xl rounded-xl">
-                                        <div>
-                                            <img src={item.coverImage} alt={item.coverImageAltTR} title={item.coverImageTitleTR} className="w-full h-[200px] rounded-t-xl" />
-                                        </div>
-                                        <div className="p-5 flex flex-col min-h-[248px]">
-                                            <div className="font-semibold line-clamp-2">{item.TR_title}</div>
-                                            <div className="text-sm ml-auto mt-2 flex flex-row items-center justify-center">{formatDate(item.createdAt)} <BiSolidPencil size={14} className='ml-1'/></div>
-                                            <h4 className="text-sm mt-2 line-clamp-3">{item.TR_description}</h4>
-                                            <Link href={`/tr/blog/${item.TR_Slug}`} className="mt-auto ml-auto flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
-                                                Yazıyı Oku <AiOutlineArrowRight size={20} className='ml-2' />
-                                            </Link>
-                                        </div>
+        <div>
+            <Header lang={"tr"} />
+            <div className='p-5 sm:p-20 grid gap-20'>
+                <div className="flex space-x-4 items-center">
+                    <div className="w-1.5 h-28 bg-color2 rounded-lg"></div>
+                    <h2 className="text-3xl font-extrabold text-color2">
+                        {params.categories.toString().toUpperCase()} {blogCounter && <span className="bg-color3 p-1 text-white rounded-xl shadow-xl">{blogCounter}</span>}
+                    </h2>
+                </div>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5'>
+                    {
+                        blogPosts && blogPosts.map((item, index) => (
+                            <div key={index}>
+                                <div className="flex flex-col col-span-1 shadow-xl rounded-xl">
+                                    <div>
+                                        <img src={item.coverImage} alt={item.coverImageAltTR} title={item.coverImageTitleTR} className="w-full h-[200px] rounded-t-xl" />
+                                    </div>
+                                    <div className="p-5 flex flex-col min-h-[248px]">
+                                        <div className="font-semibold line-clamp-2">{item.TR_title}</div>
+                                        <div className="text-sm ml-auto mt-2 flex flex-row items-center justify-center">{formatDate(item.createdAt)} <BiSolidPencil size={14} className='ml-1' /></div>
+                                        <h4 className="text-sm mt-2 line-clamp-3">{item.TR_description}</h4>
+                                        <Link href={`/tr/blog/${item.TR_Slug}`} className="mt-auto ml-auto flex p-2 font-semibold bg-color2 text-white w-40 items-center rounded-3xl shadow-lg shadow-gray-400 justify-center">
+                                            Yazıyı Oku <AiOutlineArrowRight size={20} className='ml-2' />
+                                        </Link>
                                     </div>
                                 </div>
-                            ))
-                        }
-                    </div>
-                    {!isLoadedAllPost && 
-                        <div className='my-5 flex items-center justify-center'>
-                            <button onClick={loadMore} className='bg-color2 h-14 rounded-2xl w-[90vw] max-w-sm items-center justify-center text-white font-semibold text-xl'>
-                                Devamını Yükle
-                            </button>
-                        </div>
+                            </div>
+                        ))
                     }
                 </div>
+                {!isLoadedAllPost &&
+                    <div className='my-5 flex items-center justify-center'>
+                        <button onClick={loadMore} className='bg-color2 h-14 rounded-2xl w-[90vw] max-w-sm items-center justify-center text-white font-semibold text-xl'>
+                            Devamını Yükle
+                        </button>
+                    </div>
+                }
             </div>
+        </div>
     )
 }
 
