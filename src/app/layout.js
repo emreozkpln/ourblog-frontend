@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { Quicksand } from "next/font/google";
 
@@ -9,7 +10,10 @@ export default function RootLayout({ children }) {
 			<head>
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3586181999451961" crossOrigin={"anonymous"}></script>
 			</head>
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<Toaster />
+				{children}
+			</body>
 		</html>
 	);
 }
