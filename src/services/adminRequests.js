@@ -9,7 +9,8 @@ export async function login(username, password) {
             body: JSON.stringify({
                 username,
                 password
-            })
+            }),
+            credentials: "include"
         })
         if (res.status === 200) {
             return "Ok."

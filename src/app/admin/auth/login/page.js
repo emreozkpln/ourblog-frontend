@@ -65,7 +65,7 @@ function Login() {
                     style: darkToastStyle
                     }
                 );
-                // router.push("/")
+                router.push("/admin")
             }
             setIsFetching(false)
         }
