@@ -28,3 +28,29 @@ export async function login(username, password) {
         return "err"
     }
 }
+
+export async function logout() {
+    try {
+        let CSRF = await fetch("http://localhost:8080/CSRF", {
+            cache: "no-store",
+            credentials: "include"
+        })
+        CSRF = await CSRF.json()
+        CSRF = CSRF.csrfToken
+        const res = await fetch(`http://localhost:8080/admin/logout`, {
+            method: "POST",
+            cache: "no-store",
+            headers: {
+                "Content-Type": "application/json",
+                "_csrf" : CSRF
+            },
+            body: JSON.stringify({
+                "_csrf" : CSRF 
+            }),
+            credentials: "include"
+        })
+        return "ok"
+    } catch(err) {
+        return "err"
+    }
+}
